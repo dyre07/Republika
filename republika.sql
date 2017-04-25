@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2017 at 08:40 AM
+-- Generation Time: Apr 25, 2017 at 04:47 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -23,6 +23,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(11) NOT NULL,
+  `nama` varchar(1000) NOT NULL,
+  `username` varchar(1000) NOT NULL,
+  `password` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `nama`, `username`, `password`) VALUES
+(2, 'Widya Restiani', 'widya', '9146bfc09df862ee46fa9b512c72f9a6');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `berita`
 --
 
@@ -33,14 +53,6 @@ CREATE TABLE `berita` (
   `image` varchar(1000) NOT NULL,
   `id_kategori` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `berita`
---
-
-INSERT INTO `berita` (`id_berita`, `title`, `content`, `image`, `id_kategori`) VALUES
-(5, 'Republika', 'Widya Restiani', 'berita_1492670047.jpg', 2),
-(6, 'Anies menang', 'ahok kalah', 'berita_1492670278.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -66,6 +78,12 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
 -- Indexes for table `berita`
 --
 ALTER TABLE `berita`
@@ -82,10 +100,15 @@ ALTER TABLE `kategori`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `kategori`
 --
